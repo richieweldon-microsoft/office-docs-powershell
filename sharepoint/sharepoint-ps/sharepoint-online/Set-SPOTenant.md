@@ -25,6 +25,7 @@ Set-SPOTenant [-ApplyAppEnforcedRestrictionsToAdHocRecipients <Boolean>]
  [-StartASiteFormUrl <String>] [-UsePersistentCookiesForExplorerView <Boolean>]
  [-CommentsOnSitePagesDisabled <Boolean>] [-SocialBarOnSitePagesDisabled <Boolean>]
  [-DefaultSharingLinkType <SharingLinkType>]
+ [-DisableWebPartIds <Guid>]
  [-DisallowInfectedFileDownload <Boolean>] [-EnableGuestSignInAcceleration <Boolean>]
  [-FileAnonymousLinkType <AnonymousLinkType>] [-FolderAnonymousLinkType <AnonymousLinkType>]
  [-IPAddressAllowList <String>] [-IPAddressEnforcement <Boolean>] [-IPAddressWACTokenLifetime <Int32>]
@@ -139,6 +140,27 @@ Parameter Sets: (All)
 Aliases: 
 Applicable: SharePoint Online
 
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -DisabledWebPartIds
+PARAMVALUE: <Guid>[,<Guid>,...]
+ 
+Allows administrators prevent certain, specific web parts from being added to pages or rendering on pages on which they were previously added. Only web parts that utilize third-party services (Amazon Kindle, YouTube, Twitter) can be disabled in such a manner.
+ 
+To disable a specific web part you need to enter its GUID as the parameter. You can enter in multiple GUIDs by using a comma to separate them. To view a list of disabled web parts, use Get-SPOSite without parameters. To re-enable a web part that was previously disabled, invoke this cmdlet with the same parameter options and GUID used to disable the web part. 
+ 
+ 
+```yaml
+Type: Guid[]
+Parameter Sets: (All)
+Aliases: 
+Applicable: SharePoint Online
+ 
 Required: False
 Position: Named
 Default value: None
